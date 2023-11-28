@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
 use App\Models\UserType;
 
-class AdminOnly
+class AdminAuth
 {
     /**
      * Handle an incoming request.

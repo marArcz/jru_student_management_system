@@ -27,7 +27,8 @@ class DatabaseSeeder extends Seeder
         // create default Admin
         $admin_type = UserType::select('id')->where('description','Admin')->first();
         User::create([
-            'name' => 'Admin',
+            'firstname' => 'Admin',
+            'lastname' => 'Account',
             'email' => 'admin@gmail.com',
             'password' => 'admin',
             'user_type_id' => $admin_type->id
