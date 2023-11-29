@@ -17,8 +17,9 @@ return new class extends Migration
             $table->string("firstname");
             $table->string("lastname");
             $table->string("middlename")->nullable();
-            $table->string("program");
-            $table->string("student_id_no");
+            $table->string("student_id_no")->unique();
+            $table->foreignId('program_id')->constrained('programs')->cascadeOnDelete();
+            $table->softDeletes();
         });
     }
 

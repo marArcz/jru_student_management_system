@@ -3,6 +3,8 @@
 namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+
+use App\Models\Program;
 use Illuminate\Database\Seeder;
 use App\Models\UserType;
 use App\Models\User;
@@ -34,6 +36,12 @@ class DatabaseSeeder extends Seeder
             'user_type_id' => $admin_type->id
         ]);
 
-
+        // create programs
+        $programs = ['BSIT','BSIS','BSCS'];
+        foreach ($programs as $key => $program) {
+            Program::create([
+                'name' => $program,
+            ]);
+        }
     }
 }

@@ -1,8 +1,11 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\ProgramController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\StudentController;
+use Illuminate\Support\Facades\Request;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -18,9 +21,13 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get("/success", function (Request $request) {
+    return redirect()->route($request->string('redirect'))->with('success', $request->string('message'));
+});
+
 Route::get('/dashboard', function () {
     return view('dashboard');
-})->middleware(['auth', 'verified','adminAuth'])->name('dashboard');
+})->middleware(['auth', 'verified', 'adminAuth'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -28,11 +35,15 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-Route::middleware('adminAuth')
-    ->prefix('/admin')
-    ->name('admin.')
-    ->group(function(){
-        Route::resource('students', StudentController::class);
+Route::middleware(['auth', 'role:admin'])
+    ->group(function () {
+        Route::resources([
+            'students' => StudentController::class,
+            'programs' => ProgramController::class,
+        ]);
+
+        Route::get('/students/{student}/delete',[StudentController::class,'confirmDelete'])->name('students.confirm.delete');
+        Route::get('/programs/{program}/delete',[ProgramController::class,'confirmDelete'])->name('programs.confirm.delete');
     });
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';
