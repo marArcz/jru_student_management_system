@@ -49,4 +49,11 @@ Route::middleware(['auth', 'role:admin'])
         Route::get('/clerks/{clerk}/delete',[ClerkController::class,'confirmDelete'])->name('clerks.confirm.delete');
     });
 
+Route::prefix('/students')->name('students.')->group(function(){
+    Route::prefix("/auth")->name('auth.')->group(function(){
+        Route::get("/login",[StudentAuthController::class,'login'])->name('login');
+        Route::get("/register",[StudentAuthController::class,'register'])->name('register');
+    });
+});
+
 require __DIR__ . '/auth.php';
