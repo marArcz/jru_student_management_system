@@ -27,6 +27,8 @@ class User extends Authenticatable
         'password',
     ];
 
+    protected $with = ['userType'];
+
     public function userType():BelongsTo
     {
         return $this->belongsTo(UserType::class);
@@ -51,4 +53,5 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+
 }

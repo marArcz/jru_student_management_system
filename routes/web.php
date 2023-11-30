@@ -4,6 +4,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ProgramController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\StudentController;
+use App\Http\Controllers\ClerkController;
 use Illuminate\Support\Facades\Request;
 
 /*
@@ -27,7 +28,7 @@ Route::get("/success", function (Request $request) {
 
 Route::get('/dashboard', function () {
     return view('dashboard');
-})->middleware(['auth', 'verified', 'adminAuth'])->name('dashboard');
+})->middleware(['auth'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -40,10 +41,12 @@ Route::middleware(['auth', 'role:admin'])
         Route::resources([
             'students' => StudentController::class,
             'programs' => ProgramController::class,
+            'clerks' => ClerkController::class,
         ]);
 
         Route::get('/students/{student}/delete',[StudentController::class,'confirmDelete'])->name('students.confirm.delete');
         Route::get('/programs/{program}/delete',[ProgramController::class,'confirmDelete'])->name('programs.confirm.delete');
+        Route::get('/clerks/{clerk}/delete',[ClerkController::class,'confirmDelete'])->name('clerks.confirm.delete');
     });
 
 require __DIR__ . '/auth.php';

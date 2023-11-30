@@ -14,6 +14,7 @@
                 <div class="card-body p-4">
                     <form action="{{ route('students.update',$student->id) }}" method="POST">
                         @csrf
+                        @method('patch')
                         <input type="hidden" name="_method" value="PATCH">
                         <p class="form-text">Student Details</p>
                         <div class="mb-3">
