@@ -11,7 +11,7 @@
                 </div>
 
                 @php
-                    $navigationLinks = [['Dashboard', 'dashboard'], ['Programs', 'programs.index'], ['Students', 'students.index'], ['Clerks', 'clerks.index']];
+                    $navigationLinks = [['Home', 'students.home.index']];
                 @endphp
 
 
@@ -36,7 +36,7 @@
                                 {{ Auth::user()->firstname . ' ' . Auth::user()->lastname }}
                             </div>
                             <div>
-                                <small>{{ Auth::user()->userType->description }}</small>
+                                <small>Student</small>
                             </div>
                         </button>
                     </x-slot>

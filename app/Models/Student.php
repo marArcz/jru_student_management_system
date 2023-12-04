@@ -7,8 +7,9 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Foundation\Auth\User as Authenticatable;
 
-class Student extends Model
+class Student extends Authenticatable
 {
     use HasFactory, SoftDeletes;
 
@@ -17,7 +18,9 @@ class Student extends Model
         'lastname',
         'middlename',
         'student_id_no',
-        'program_id'
+        'program_id',
+        'verified_at',
+        'password'
     ];
 
     public function program():BelongsTo

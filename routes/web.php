@@ -4,7 +4,9 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ProgramController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\StudentController;
+use App\Http\Controllers\StudentAuthController;
 use App\Http\Controllers\ClerkController;
+use App\Http\Controllers\StudentHomeController;
 use Illuminate\Support\Facades\Request;
 
 /*
@@ -20,7 +22,7 @@ use Illuminate\Support\Facades\Request;
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('welcome');
 
 Route::get("/success", function (Request $request) {
     return redirect()->route($request->string('redirect'))->with('success', $request->string('message'));
@@ -37,6 +39,7 @@ Route::middleware('auth')->group(function () {
 });
 
 Route::middleware(['auth', 'role:admin'])
+    ->prefix('/admin')
     ->group(function () {
         Route::resources([
             'students' => StudentController::class,
@@ -51,8 +54,14 @@ Route::middleware(['auth', 'role:admin'])
 
 Route::prefix('/students')->name('students.')->group(function(){
     Route::prefix("/auth")->name('auth.')->group(function(){
-        Route::get("/login",[StudentAuthController::class,'login'])->name('login');
-        Route::get("/register",[StudentAuthController::class,'register'])->name('register');
+        Route::get("/",[StudentAuthController::class,'index'])->name('index');
+        Route::post("/login",[StudentAuthController::class,'login'])->name('login');
+        Route::get("/create",[StudentAuthController::class,'create'])->name('create');
+        Route::post("/register",[StudentAuthController::class,'register'])->name('register');
+    });
+
+    Route::middleware(['auth:student'])->group(function () {
+        Route::resource('home', StudentHomeController::class);
     });
 });
 

@@ -13,32 +13,26 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
-<body class="antialiased">
-    <div class="navbar">
-        <div class="container">
-            <ul class="navbar-nav ms-auto">
-                <li class="nav-item">
-                    <a href="{{ route('admin.login') }}" class="nav-link">Admin</a>
-                </li>
-            </ul>
-        </div>
-    </div>
-    <div class="container">
+<body class="antialiased bg-light">
+    <div class="container mt-5">
         <div class="col-lg-6 col-md-7 col-4 mx-auto">
-            <h3>Students Portal</h3>
-            <div class="card mt-4">
-                <div class="card-body p-4">
-                    <form action="{{route('students.auth.login')}}">
-                        <div class="mb-3">
-                            <label for="" class="form-label">Firstname</label>
-                            <input type="text" class="form-control" required name="firstname">
+            <div class="text-center">
+                <h4 class="text-secondary text-center">Welcome to JRU</h4>
+                <p class="text-secondary">The official website of Jack Roberto University</p>
+            </div>
+            <div class="mt-5">
+                <div class="d-flex justify-content-center gap-3">
+                    <div class="card border-0 shadow-sm">
+                        <div class="card-body">
+                            <a href="{{ route('students.auth.index') }}" class="nav-link link-primary">Students
+                                Portal</a>
                         </div>
-                        <div class="mb-3">
-                            <label for="" class="form-label">Lastname</label>
-                            <input type="text" class="form-control" required name="lastname">
+                    </div>
+                    <div class="card border-0 shadow-sm">
+                        <div class="card-body">
+                            <a href="{{ route('admin.login') }}" class="nav-link link-primary">Admin Portal</a>
                         </div>
-                        <button class="btn btn-primary" type="submit">Login</button>
-                    </form>
+                    </div>
                 </div>
             </div>
         </div>
