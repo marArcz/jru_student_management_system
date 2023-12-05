@@ -1,6 +1,7 @@
 @extends('layouts.students.main')
 @section('content')
     <div>
+        <div class="body_background">
         <div class="py-12">
             <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
                 <div class="row">
@@ -80,6 +81,7 @@
                     </div>
                 </div>
             </div>
+        </div>
         </div>
     </div>
 @endsection

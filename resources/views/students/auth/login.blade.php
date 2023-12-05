@@ -12,7 +12,7 @@
     <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet" />
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
-
+<div class="body_background">
 <body class="antialiased bg-light">
     <div class="navbar">
         <div class="container">
@@ -53,6 +53,7 @@
                 </div>
             </div>
         </div>
+    </div>
     </div>
 </body>
 </html>

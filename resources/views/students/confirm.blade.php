@@ -4,16 +4,16 @@
             {{ __('Students') }}
         </h2>
     </x-slot>
-
+    <div class="body_background">
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <form action="{{ route('students.destroy', $student->id) }}" method="post">
                 @csrf
                 @method('delete')
-                <p class="mb-3 fs-4 fw-bold text-danger">
+                <p class="mb-3 fs-4 fw-bold text-white">
                     Are you sure to delete this student?
                 </p>
-                <p class="text-dark fs-5 "><span>{{ $student->firstname }} {{ $student->lastname }}</span></p>
+                <p class="text-white fs-5 "><span>{{ $student->firstname }} {{ $student->lastname }}</span></p>
 
                 <div class="mt-4">
                     <div class="flex gap-3">
@@ -23,5 +23,6 @@
                 </div>
             </form>
         </div>
+    </div>
     </div>
 </x-app-layout>

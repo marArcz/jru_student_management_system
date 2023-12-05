@@ -23,9 +23,10 @@
             </ul>
         </div>
     </div>
+    <div class="body_background">
     <div class="container">
         <div class="col-lg-6 col-md-7 col-4 mx-auto">
-            <h4 class="text-secondary">Students Portal</h4>
+            <h4 class="text-secondary text-white">Students Portal</h4>
             <div class="card mt-4 mb-3 shadow-sm border-0 rounded-3">
                 <div class="card-body p-4">
                     <form action="{{ route('students.auth.register') }}" method="POST">
@@ -83,6 +84,7 @@
                 </div>
             </div>
         </div>
+    </div>
     </div>
 </body>
 

@@ -1,3 +1,16 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+.body_background {
+
+    background-color: navy;
+
+}
+.logo {
+    width: 60px;
+    height: auto;
+    align-content: center;
+    margin-top: 3px;
+}
+
+

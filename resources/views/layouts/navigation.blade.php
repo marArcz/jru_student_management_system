@@ -4,11 +4,14 @@
         <div class="flex justify-between h-16">
             <div class="flex">
                 <!-- Logo -->
-                <div class="shrink-0 flex items-center">
-                    <a href="{{ route('dashboard') }}">
-                        <img src="{{asset('images/jru-logo.png')}}" class="block h-9 w-auto fill-current text-gray-800" />
-                    </a>
+                <div class="logo">
+                    <div class="shrink-0 flex items-center">
+                        <a href="{{ route('dashboard') }}">
+                            <img src="{{asset('images/jru-logo.png')}}" class=" fill-current text-gray-800" />
+                        </a>
+                    </div>
                 </div>
+
 
                 @php
                     $navigationLinks = [['Dashboard', 'dashboard'], ['Programs', 'programs.index'], ['Students', 'students.index'], ['Clerks', 'clerks.index']];
@@ -25,6 +28,9 @@
                     </div>
                 @endforeach
             </div>
+
+
+
 
             <!-- Settings Dropdown -->
             <div class="hidden sm:flex sm:items-center sm:ms-6">
