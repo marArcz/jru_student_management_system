@@ -23,7 +23,7 @@
             </ul>
         </div>
     </div>
-    <div class="body_background">
+    <div class="">
     <div class="container">
         <div class="col-lg-6 col-md-7 col-4 mx-auto">
             <h4 class="text-secondary text-white">Students Portal</h4>
