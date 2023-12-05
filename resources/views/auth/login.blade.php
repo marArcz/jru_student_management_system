@@ -2,26 +2,21 @@
     <!-- Session Status -->
     <x-auth-session-status class="mb-4" :status="session('status')" />
 
+<<<<<<< HEAD
     <form method="POST" action="{{ route('admin.login') }}">
         @csrf
+=======
+>>>>>>> e1146907c097e5681148160854381b33d41177d7
 
-        <!-- User type -->
-        {{-- <div class="mb-3">
-            <x-input-label for="user-type" :value="__('User Type')" />
-            <select id="user-type" class="block mt-1 mb-2 w-full rounded-md" name="user_type_id" :value="old('user_type_id')" required>
-                @foreach ($userTypes as $userType)
-                    <option value="{{ $userType->id }}">{{ $userType->description }}</option>
-                @endforeach
-            </select>
-            <x-input-error :messages="$errors->get('user_type_id')" class="mt-2" />
-        </div> --}}
+    <form method="POST" action="{{ route('admin.login') }}">
+        @csrf
         <!-- Email Address -->
+
         <div class="mt-3">
             <x-input-label for="email" :value="__('Email')" />
             <x-text-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autofocus autocomplete="username" />
             <x-input-error :messages="$errors->get('email')" class="mt-2" />
         </div>
-
         <!-- Password -->
         <div class="mt-4">
             <x-input-label for="password" :value="__('Password')" />
@@ -33,9 +28,6 @@
 
             <x-input-error :messages="$errors->get('password')" class="mt-2" />
         </div>
-
-
-
         <!-- Remember Me -->
         <div class="block mt-4">
             <label for="remember_me" class="inline-flex items-center">
@@ -55,5 +47,8 @@
                 {{ __('Log in') }}
             </x-primary-button>
         </div>
+
     </form>
+
+    <a href="{{route('welcome')}}">Website home</a>
 </x-guest-layout>

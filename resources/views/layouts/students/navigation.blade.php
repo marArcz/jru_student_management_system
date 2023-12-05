@@ -4,17 +4,16 @@
         <div class="flex justify-between h-16">
             <div class="flex">
                 <!-- Logo -->
-                <div class="logo">
-                    <div class="shrink-0 flex items-center">
-                        <a href="{{ route('dashboard') }}">
-                            <img src="{{asset('images/jru-logo.png')}}" class=" fill-current text-gray-800" />
-                        </a>
-                    </div>
+
+                <div class="shrink-0 flex items-center">
+                    <a href="{{ route('dashboard') }}">
+                        <img src="{{asset('images/jru-logo.png')}}" class="block h-9 w-auto fill-current text-gray-800" />
+                    </a>
                 </div>
 
 
                 @php
-                    $navigationLinks = [['Dashboard', 'dashboard'], ['Programs', 'programs.index'], ['Students', 'students.index'], ['Clerks', 'clerks.index']];
+                    $navigationLinks = [['Home', 'students.home.index']];
                 @endphp
 
 
@@ -22,15 +21,12 @@
                 @foreach ($navigationLinks as $navigationLink)
                     <!-- Navigation Links -->
                     <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                        <x-nav-link class="text-decoration-none" :href="route($navigationLink[1])" :active="request()->routeIs($navigationLink[1])">
+                        <x-nav-link :href="route($navigationLink[1])" :active="request()->routeIs($navigationLink[1])">
                             {{ __($navigationLink[0]) }}
                         </x-nav-link>
                     </div>
                 @endforeach
             </div>
-
-
-
 
             <!-- Settings Dropdown -->
             <div class="hidden sm:flex sm:items-center sm:ms-6">
@@ -42,7 +38,7 @@
                                 {{ Auth::user()->firstname . ' ' . Auth::user()->lastname }}
                             </div>
                             <div>
-                                <small>{{ Auth::user()->userType->description }}</small>
+                                <small>Student</small>
                             </div>
                         </button>
                     </x-slot>

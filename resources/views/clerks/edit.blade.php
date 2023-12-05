@@ -4,10 +4,10 @@
             {{ __('Clerks') }}
         </h2>
     </x-slot>
-
+    <div class="body_background">
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <p class="mb-3 fs-5 fw-bold">
+            <p class="mb-3 fs-5 fw-bold text-white">
                 Update Clerk
             </p>
             <div class="card border-0 bg-white rounded-3 shadow-sm">
@@ -48,6 +48,7 @@
                         </div>
                     </form>
                 </div>
+            </div>
             </div>
         </div>
     </div>
