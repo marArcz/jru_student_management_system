@@ -22,7 +22,7 @@
                 @foreach ($navigationLinks as $navigationLink)
                     <!-- Navigation Links -->
                     <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                        <x-nav-link :href="route($navigationLink[1])" :active="request()->routeIs($navigationLink[1])">
+                        <x-nav-link class="text-decoration-none" :href="route($navigationLink[1])" :active="request()->routeIs($navigationLink[1])">
                             {{ __($navigationLink[0]) }}
                         </x-nav-link>
                     </div>
