@@ -24,42 +24,42 @@
                                 <div class="mt-4">
                                     <div class="row mb-3">
                                         <div class="col-sm-2">
-                                            <p class="my-1 text-secondary">Student ID No:</p>
+                                            <p class="my-1 text-dark">Student ID No:</p>
                                         </div>
                                         <div class="col-sm-10">
-                                            <p class="my-1 text-primary">{{ $student->student_id_no }}</p>
+                                            <p class="my-1 text-dark">{{ $student->student_id_no }}</p>
                                         </div>
                                     </div>
                                     <div class="row mb-3">
                                         <div class="col-sm-2">
-                                            <p class="my-1 text-secondary">Firstname:</p>
+                                            <p class="my-1 text-dark">Firstname:</p>
                                         </div>
                                         <div class="col-sm-10">
-                                            <p class="my-1 text-primary">{{ $student->firstname }}</p>
+                                            <p class="my-1 text-dark">{{ $student->firstname }}</p>
                                         </div>
                                     </div>
                                     <div class="row mb-3">
                                         <div class="col-sm-2">
-                                            <p class="my-1 text-secondary">Middlename:</p>
+                                            <p class="my-1 text-dark">Middlename:</p>
                                         </div>
                                         <div class="col-sm-10">
-                                            <p class="my-1 text-primary">{{ $student->middlename }}</p>
+                                            <p class="my-1 text-dark">{{ $student->middlename }}</p>
                                         </div>
                                     </div>
                                     <div class="row mb-3">
                                         <div class="col-sm-2">
-                                            <p class="my-1 text-secondary">Lastname:</p>
+                                            <p class="my-1 text-dark">Lastname:</p>
                                         </div>
                                         <div class="col-sm-10">
-                                            <p class="my-1 text-primary">{{ $student->lastname }}</p>
+                                            <p class="my-1 text-dark">{{ $student->lastname }}</p>
                                         </div>
                                     </div>
                                     <div class="row mb-3">
                                         <div class="col-sm-2">
-                                            <p class="my-1 text-secondary">Program:</p>
+                                            <p class="my-1 text-dark">Program:</p>
                                         </div>
                                         <div class="col-sm-10">
-                                            <p class="my-1 text-primary">{{ $student->program->name }}</p>
+                                            <p class="my-1 text-dark">{{ $student->program->name }}</p>
                                         </div>
                                     </div>
                                 </div>
@@ -70,7 +70,7 @@
                         <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                             <div class="float-end mt-3 me-3">
                                 <button disabled="{{ !$student->verified_at }}"
-                                    class="btn btn-sm btn-light shadow-sm">Print</button>
+                                    class="btn btn-sm btn-light shadow-sm text-dark">Print</button>
                             </div>
 
                             <div class="student-id-container">

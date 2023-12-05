@@ -53,7 +53,7 @@ class StudentAuthController extends Controller
             'program_id' => 'required'
         ]);
 
-        $validated['password'] = Hash::make($validated['password']);
+        $validated['password'] = Hash::make($request->password);
 
         $student = Student::create($validated);
         Auth::guard('student')->login($student);
