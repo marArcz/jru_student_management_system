@@ -1,6 +1,6 @@
 <x-app-layout>
     <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+        <h2 class="font-semibold text-xl text-light mb-0 leading-tight">
             {{ __('Clerks') }}
         </h2>
     </x-slot>
@@ -8,7 +8,7 @@
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <p class="mb-3 fs-5 fw-bold text-white">
-                Create Clerk
+                New Clerk
             </p>
             <div class="card border-0 bg-white rounded-3 shadow-sm">
                 <div class="card-body p-4">

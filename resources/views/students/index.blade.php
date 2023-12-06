@@ -13,9 +13,9 @@
             <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
                 @if ($user->isAdmin())
                     <div class="text-end mb-3">
-                        <a href="{{ route('students.create') }}" class="btn btn-primary">
-                            <i class="bx bxs-plus-circle"></i>
-                            <span>Add Student</span>
+                        <a href="{{ route('students.create') }}" class="btn btn-light ">
+                            <i class="bx bxs-plus-circle text-blue-600"></i>
+                            <span class="text-blue-600">Add Student</span>
                         </a>
                     </div>
                 @endif
@@ -113,7 +113,15 @@
                                                             </li>
                                                             <li class="mb-2">
                                                                 <a class="dropdown-item items-center d-flex gap-2 {{ $student->isVerified() ? '' : 'disabled' }}"
-                                                                    href="{{ $student->isVerified() ? route('studentId.print', $student->id) : '' }}"
+                                                                    href="{{ $student->isVerified() ? route('students.print', $student->id) : '' }}"
+                                                                    target="_blank">
+                                                                    <i class=" bx bx-printer"></i>
+                                                                    <span>Print Information Sheet</span>
+                                                                </a>
+                                                            </li>
+                                                            <li class="mb-0">
+                                                                <a class="dropdown-item items-center d-flex gap-2 {{ $student->isVerified() ? '' : 'disabled' }}"
+                                                                    href="{{ $student->isVerified() ? route('students.studentId.print', $student->id) : '' }}"
                                                                     target="_blank">
                                                                     <i class=" bx bx-printer"></i>
                                                                     <span>Print ID Card</span>

@@ -12,7 +12,7 @@ class StudentController extends Controller
 {
     public function __construct()
     {
-        $this->middleware(['role:admin'],['except' => ['index','show']]);
+        $this->middleware(['role:admin'],['except' => ['index','show','verify','updateStatus','print']]);
     }
     /**
      * Display a listing of the resource.

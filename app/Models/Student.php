@@ -47,6 +47,11 @@ class Student extends Authenticatable
         return $this->verified_at != null;
     }
 
+    public function fullname(): string
+    {
+        return $this->middlename ? $this->firstname . ' ' . $this->middlename[0] . '.' . ' ' . $this->lastname : $this->firstname . ' ' . $this->lastname;
+    }
+
     /**
      * The attributes that should be cast.
      *

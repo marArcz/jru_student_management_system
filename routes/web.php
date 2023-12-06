@@ -32,9 +32,6 @@ Route::get('/', function () {
 //     return redirect()->route($request->string('redirect'))->with('success', $request->string('message'));
 // });
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -45,11 +42,16 @@ Route::middleware('auth')->group(function () {
 Route::middleware(['auth'])
     ->prefix('/admin')
     ->group(function () {
+        Route::get('/dashboard', function () {
+            return view('dashboard');
+        })->name('admin.dashboard');
+
+        Route::get('/studentId/{student}/print', [StudentIdController::class, 'print'])->name('admin.studentId.print');
+
         Route::patch('/students/{student}/update/status', [StudentController::class, 'updateStatus'])->name('students.status.update');
         Route::get('/students/{student}/verify', [StudentController::class, 'verify'])->name('students.verify');
         Route::get('/students/{student}/print', [StudentController::class, 'print'])->name('students.print');
-        Route::name('admin.')->resource('students.studentId', StudentIdController::class)->parameters(['studentId' => 'student'])->shallow();
-        Route::get('/studentId/{student}/print', [StudentIdController::class, 'print'])->name('admin.studentId.print');
+        Route::resource('students.studentId', StudentIdController::class)->parameters(['studentId' => 'student'])->shallow();
         Route::resources([
             'programs' => ProgramController::class,
             'clerks' => ClerkController::class,

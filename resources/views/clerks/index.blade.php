@@ -8,7 +8,10 @@
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="text-end mb-3">
-                <a href="{{ route('clerks.create') }}" class="btn btn-primary">Add Clerk</a>
+                <a href="{{ route('clerks.create') }}" class="btn btn-light">
+                    <i class="bx bxs-plus-circle text-blue-600"></i>
+                    <span class="text-blue-600">Add Clerk</span>
+                </a>
             </div>
             <div class="card border-0 bg-white rounded-3">
                 <div class="card-body p-4">

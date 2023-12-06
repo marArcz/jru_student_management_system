@@ -6,8 +6,8 @@
                 <!-- Logo -->
                 <div class="logo">
                     <div class="shrink-0 flex items-center">
-                        <a href="{{ route('dashboard') }}">
-                            <img src="{{asset('images/amigo-logo.png')}}" class=" fill-current text-gray-800" />
+                        <a href="{{ route('admin.dashboard') }}">
+                            <img src="{{asset('images/jru-logo.png')}}" class=" fill-current text-gray-800" />
                         </a>
                     </div>
                 </div>
@@ -15,9 +15,9 @@
 
                 @php
                     if (Auth::user()->isAdmin() == 'Admin') {
-                        $navigationLinks = [['Dashboard', 'dashboard'], ['Programs', 'programs.index'], ['Students', 'students.index'], ['Clerks', 'clerks.index']];
+                        $navigationLinks = [['Dashboard', 'admin.dashboard'], ['Programs', 'programs.index'], ['Students', 'students.index'], ['Clerks', 'clerks.index']];
                     }else{
-                        $navigationLinks = [['Dashboard', 'dashboard'], ['Students', 'students.index']];
+                        $navigationLinks = [['Dashboard', 'admin.dashboard'], ['Students', 'students.index']];
                     }
                 @endphp
 
@@ -88,7 +88,7 @@
     <!-- Responsive Navigation Menu -->
     <div :class="{ 'block': open, 'hidden': !open }" class="hidden sm:hidden">
         <div class="pt-2 pb-3 space-y-1">
-            <x-responsive-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
+            <x-responsive-nav-link :href="route('admin.dashboard')" :active="request()->routeIs('dashboard')">
                 {{ __('Dashboard') }}
             </x-responsive-nav-link>
         </div>
