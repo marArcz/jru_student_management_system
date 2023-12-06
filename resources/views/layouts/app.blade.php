@@ -18,12 +18,12 @@
 
 <body class="font-sans antialiased bg-gradient">
 
-    <div class="min-h-screen bg-gray-100">
+    <div class="min-h-screen bg-gradient">
         @include('layouts.navigation')
 
         <!-- Page Heading -->
         @if (isset($header))
-            <header class="bg-white shadow-sm header">
+            <header class="shadow-sm">
                 <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
                     {{ $header }}
                 </div>
@@ -31,7 +31,7 @@
         @endif
         @if (session('success'))
             <div class="alert alert-success shadow-sm rounded-0">
-                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 ">
                     {{ session('success') }}
                 </div>
             </div>

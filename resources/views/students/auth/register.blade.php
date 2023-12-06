@@ -13,7 +13,7 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
-<body class="antialiased bg-light">
+<div class="body_background bg-gradient">
     <div class="navbar">
         <div class="container">
             <ul class="navbar-nav ms-auto">
@@ -23,7 +23,7 @@
             </ul>
         </div>
     </div>
-    <div class="">
+
         <div class="container">
             <div class="col-lg-6 col-md-7 col-4 mx-auto">
                 <h4 class="text-secondary text-white">Students Portal</h4>

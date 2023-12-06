@@ -4,7 +4,7 @@
             {{ __('Students') }}
         </h2>
     </x-slot>
-    <div class="body_background">
+    <div class="body_background bg-gradient">
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <form action="{{ route('students.destroy', $student->id) }}" method="post">
@@ -22,7 +22,7 @@
                     </div>
                 </div>
             </form>
-        </div>
+        </div>  
     </div>
     </div>
 </x-app-layout>

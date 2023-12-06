@@ -5,11 +5,11 @@
         </h2>
     </x-slot>
 
-   <div class="body_background">
+    <div class="body_background bg-gradient">
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="text-end mb-3">
-                <a href="{{ route('programs.create') }}" class="btn btn-primary">Add Program</a>
+                <a href="{{ route('programs.create') }}" class="btn btn-light">Add Program</a>
             </div>
             <div class="card border-0 bg-white rounded-3">
                 <div class="card-body p-4">
@@ -46,5 +46,6 @@
             </div>
         </div>
     </div>
+    </body>
    </div>
 </x-app-layout>

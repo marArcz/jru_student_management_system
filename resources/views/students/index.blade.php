@@ -5,7 +5,7 @@
         </h2>
     </x-slot>
 
-    <div class="body_background">
+    <div class="body_background bg-gradient">
         @php
             $user = Auth::user();
         @endphp

@@ -7,9 +7,9 @@
 @endsection --}}
 
 @section('content')
-    <div>
-        <div class="">
-            <div class="py-8">
+
+<div class="body_background bg-gradient">
+            <div class="py-12">
                 <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
                     <div class="row gy-3">
                         <div class="col-md">

@@ -4,41 +4,41 @@
             {{ __('Students') }}
         </h2>
     </x-slot>
-    <div class="body_background">
+    <div class="body_background bg-gradient">
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <p class="mb-3 fs-5 fw-bold text-white">
                 Update Student Info
             </p>
-            <div class="card border-0 bg-white rounded-3 shadow-sm">
+            <div class="cp-4 sm:p-9 bg-gradient shadow sm:rounded-lg">
                 <div class="card-body p-4">
                     <form action="{{ route('students.update',$student->id) }}" method="POST">
                         @csrf
                         @method('patch')
                         <input type="hidden" name="_method" value="PATCH">
-                        <p class="form-text">Student Details</p>
+                        <p class="form-text text-white">Student Details</p>
                         <div class="mb-3">
-                            <label for="firstname" class="form-label">Firstname: <span
+                            <label class="text-white" for="firstname" class="form-label">Firstname: <span
                                     class="text-danger">*</span></label>
                             <input value="{{ old('firstname') ?? $student->firstname }}" type="text" id="firstname"
                                 name="firstname" class="form-control shadow-sm" required>
                             <x-input-error :messages="$errors->get('firstname')" class="mt-2" />
                         </div>
                         <div class="mb-3">
-                            <label for="middlename" class="form-label">Middlename:</label>
+                            <label class="text-white" for="middlename" class="form-label">Middlename:</label>
                             <input value="{{ old('middlename') ?? $student->middlename }}" type="text" id="middlename" name="middlename"
                                 class="form-control shadow-sm">
                             <x-input-error :messages="$errors->get('middlename')" class="mt-2" />
                         </div>
                         <div class="mb-3">
-                            <label for="lastname" class="form-label">Lastname: <span
+                            <label class="text-white" for="lastname" class="form-label">Lastname: <span
                                     class="text-danger">*</span></label>
                             <input value="{{ old('lastname') ?? $student->lastname }}" required type="text" id="lastname" name="lastname"
                                 class="form-control shadow-sm">
                             <x-input-error :messages="$errors->get('lastname')" class="mt-2 ps-2" />
                         </div>
                         <div class="mb-3">
-                            <label for="program" class="form-label">Program: <span class="text-danger">*</span></label>
+                            <label class="text-white" for="program" class="form-label">Program: <span class="text-danger">*</span></label>
                             <select name="program_id" class="form-select" required>
                                 <option value="">Select One</option>
                                 @foreach ($programs as $program)
@@ -49,16 +49,16 @@
                             <x-input-error :messages="$errors->get('program_id')" class="mt-2 ps-2" />
                         </div>
                         <div class="mb-4">
-                            <label for="student_id_no" class="form-label">
+                            <label class="text-white" for="student_id_no" class="form-label">
                                 Student ID No:
                                 <span class="text-danger">*</span>
-                                <span class="form-text">
+                                <span class="form-text text-white">
                                     (eg. 2020-12345)
                                 </span>
                             </label>
                             <input value="{{ old('student_id_no') ?? $student->student_id_no}}" type="text" required id="student_id_no"
                                 name="student_id_no" class="form-control shadow-sm">
-                            <x-input-error :messages="$errors->get('student_id_no')" class="mt-2 ps-2" />
+                            <x-input-error  :messages="$errors->get('student_id_no')" class="mt-2 ps-2" />
                         </div>
                         <div class="d-flex justify-between">
                             <a href="{{ route('students.index') }}" class="btn btn-secondary">Cancel</a>
@@ -70,4 +70,5 @@
         </div>
     </div>
     </div>
+    </body>
 </x-app-layout>

@@ -13,7 +13,7 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
-<body class="">
+<div class="body_background bg-gradient">
     <div class="navbar">
         <div class="container">
             <ul class="navbar-nav ms-auto">
