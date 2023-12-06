@@ -1,7 +1,7 @@
     <x-app-layout>
     <div class="body_background bg-gradient">
         <x-slot name="header">
-            <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+            <h2 class="font-semibold text-xl text-white leading-tight">
                 {{ __('Dashboard') }}
             </h2>
         </x-slot>
