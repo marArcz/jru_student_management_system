@@ -1,7 +1,7 @@
 @extends('layouts.students.main')
 @section('content')
-    <div>
-        <div class="">
+
+        <body class="antialiased bg-gradient">
             <div class="py-12">
                 <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
                     <div class="row">
@@ -18,7 +18,6 @@
                                         </small>
                                     </div>
                                 </div>
-
                                 <div class="p-6 text-gray-900">
                                     <h6 class="fw-bold">Student Information</h6>
                                     <div class="mt-4">
@@ -84,4 +83,5 @@
             </div>
         </div>
     </div>
+        </body>
 @endsection

@@ -5,7 +5,7 @@
         </h2>
     </x-slot>
 
-    <div class="body_background">
+    <body class="antialiased bg-light">
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
@@ -16,4 +16,5 @@
             </div>
         </div>
     </div>
+    </body>
 </x-app-layout>

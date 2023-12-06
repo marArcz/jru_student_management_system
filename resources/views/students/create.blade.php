@@ -4,7 +4,7 @@
             {{ __('Students') }}
         </h2>
     </x-slot>
-    <div class="body_background">
+
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <p class="mb-3 fs-5 fw-bold text-white">
