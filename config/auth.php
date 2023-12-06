@@ -71,8 +71,7 @@ return [
         'students' =>[
             'driver' => 'eloquent',
             'model' => App\Models\Student::class
-        ]
-
+        ],
         'students' => [
             'driver' => 'eloquent',
             'model' => App\Models\Student::class

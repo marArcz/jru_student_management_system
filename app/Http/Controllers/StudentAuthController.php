@@ -24,9 +24,9 @@ class StudentAuthController extends Controller
             $student = Student::where('student_id_no', $request->input('student_id_no'))->first();
             if($student){
                 // chck if password match
-                if(Hash::check($student->password,$validated['password'])){
+                if(Hash::check($validated['password'],$student->password)){
                     Auth::guard('student')->login($student);
-                    return redirect()->route('students.home');
+                    return redirect()->route('students.home.index');
                 }else{
                     throw ValidationException::withMessages([
                         'password' => 'You entered an incorrect password!',
@@ -48,9 +48,13 @@ class StudentAuthController extends Controller
         $validated = $request->validate([
             'firstname' => 'required',
             'lastname' => 'required',
+            'middlename'=>'nullable',
             'student_id_no' => ['required', 'unique:students,student_id_no','regex:/^(\d{4}-)\d{5}$/D'],
-            'password' => ['required'],
-            'program_id' => 'required'
+            'password' => ['required','confirmed','min:8'],
+            'program_id' => 'required',
+            'email' => ['required', 'unique:students,email','email'],
+            'address' => ['required'],
+            'phone' => ['required', 'regex:/^([0]{1}[9]{1})(\d{9})$/D'],
         ]);
 
         $validated['password'] = Hash::make($request->password);

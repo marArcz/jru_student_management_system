@@ -1,4 +1,4 @@
-<nav x-data="{ open: false }" class="bg-white border-b border-gray-100">
+<nav x-data="{ open: false }" class="bg-white border-b border-gray-100 navigation-bar">
     <!-- Primary Navigation Menu -->
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between h-16">
@@ -7,14 +7,18 @@
                 <div class="logo">
                     <div class="shrink-0 flex items-center">
                         <a href="{{ route('dashboard') }}">
-                            <img src="{{asset('images/jru-logo.png')}}" class=" fill-current text-gray-800" />
+                            <img src="{{ asset('images/jru-logo.png') }}" class=" fill-current text-gray-800" />
                         </a>
                     </div>
                 </div>
 
 
                 @php
-                    $navigationLinks = [['Dashboard', 'dashboard'], ['Programs', 'programs.index'], ['Students', 'students.index'], ['Clerks', 'clerks.index']];
+                    if (Auth::user()->isAdmin() == 'Admin') {
+                        $navigationLinks = [['Dashboard', 'dashboard'], ['Programs', 'programs.index'], ['Students', 'students.index'], ['Clerks', 'clerks.index']];
+                    }else{
+                        $navigationLinks = [['Dashboard', 'dashboard'], ['Students', 'students.index']];
+                    }
                 @endphp
 
 

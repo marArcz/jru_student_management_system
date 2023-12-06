@@ -25,6 +25,7 @@ class User extends Authenticatable
         'middlename',
         'email',
         'password',
+        'user_type_id'
     ];
 
     protected $with = ['userType'];
@@ -34,6 +35,10 @@ class User extends Authenticatable
         return $this->belongsTo(UserType::class);
     }
 
+    public function isAdmin(): bool
+    {
+        return $this->userType()->first()->description === 'Admin';
+    }
     /**
      * The attributes that should be hidden for serialization.
      *

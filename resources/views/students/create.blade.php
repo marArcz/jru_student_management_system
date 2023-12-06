@@ -51,6 +51,47 @@
                             <input value="{{old('student_id_no')}}" type="text" required id="student_id_no" name="student_id_no" class="form-control shadow-sm">
                             <x-input-error :messages="$errors->get('student_id_no')" class="mt-2 ps-2" />
                         </div>
+                        <div class="mb-4">
+                            <label for="email" class="form-label">
+                                Email Address:
+                                <span class="text-danger">*</span>
+                                <span class="form-text">
+                                    (eg. name@email.com)
+                                </span>
+                            </label>
+                            <input value="{{old('email')}}" type="email" required id="email" name="email" class="form-control shadow-sm">
+                            <x-input-error :messages="$errors->get('email')" class="mt-2 ps-2" />
+                        </div>
+                        <div class="mb-4">
+                            <label for="address" class="form-label">
+                                Home Address:
+                                <span class="text-danger">*</span>
+                            </label>
+                            <input value="{{old('address')}}" type="text" required id="address" name="address" class="form-control shadow-sm">
+                            <x-input-error :messages="$errors->get('address')" class="mt-2 ps-2" />
+                        </div>
+                        <div class="mb-4">
+                            <label for="phone" class="form-label">
+                                Phone no:
+                                <span class="text-danger">*</span>
+                                <span class="form-text">
+                                    (eg. 09123456789)
+                                </span>
+                            </label>
+                            <input maxlength="11" value="{{old('phone')}}" type="text" required id="phone" name="phone" class="form-control shadow-sm">
+                            <x-input-error :messages="$errors->get('phone')" class="mt-2 ps-2" />
+                        </div>
+                        <div class="mb-4">
+                            <label for="password" class="form-label">
+                                Password:
+                                <span class="text-danger">*</span>
+                                <span class="form-text">
+                                    (Must have more than 8 characters)
+                                </span>
+                            </label>
+                            <input maxlength="11" value="{{old('password')}}" type="password" required id="password" name="password" class="form-control shadow-sm">
+                            <x-input-error :messages="$errors->get('password')" class="mt-2 ps-2" />
+                        </div>
                         <div class="d-flex justify-between">
                             <a href="{{route('students.index')}}" class="btn btn-secondary">Cancel</a>
                             <button class="btn btn-primary" type="submit">Submit</button>
