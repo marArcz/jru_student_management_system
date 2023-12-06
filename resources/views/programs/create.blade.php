@@ -5,8 +5,8 @@
         </h2>
     </x-slot>
 
-
-    <div class="py-12">
+<div class="body_background bg-gradient">
+        <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <p class="mb-3 fs-5 fw-bold text-white">
                 Create new Program
@@ -32,4 +32,5 @@
         </div>
         </div>
     </div>
+</body>
 </x-app-layout>

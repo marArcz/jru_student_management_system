@@ -8,7 +8,7 @@
                 <div class="logo">
                     <div class="shrink-0 flex items-center">
                         <a href="{{ route('dashboard') }}">
-                            <img src="{{asset('images/jru-logo.png')}}" class=" fill-current text-gray-800" />
+                            <img src="{{asset('images/amigo-logo.png')}}" class=" fill-current text-gray-800" />
                         </a>
                     </div>
                 </div>

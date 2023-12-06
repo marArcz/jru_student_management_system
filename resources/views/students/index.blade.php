@@ -5,7 +5,7 @@
         </h2>
     </x-slot>
 
-    <body class="antialiased bg-light">
+    <div class="body_background bg-gradient">
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="text-end mb-3">

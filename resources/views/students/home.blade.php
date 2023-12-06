@@ -1,7 +1,7 @@
 @extends('layouts.students.main')
 @section('content')
 
-        <body class="antialiased bg-gradient">
+<div class="body_background bg-gradient">
             <div class="py-12">
                 <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
                     <div class="row">
