@@ -18,7 +18,7 @@
                                     <div class="flex gap-2">
                                         <div class="px-3 py-1 shadow-sm fw-bold rounded-3">
                                             <small>
-                                                @if ($student->status === 'Verified')
+                                                @if ($student->isVerified())
                                                     <span class="text-success">Verified <i class="bx bxs-check-circle"></i></span>
                                                 @else
                                                     <span class="text-danger">Unverified <i class="bx bxs-x-circle"></i></span>
@@ -112,7 +112,7 @@
                                     </div>
                                     <div class="mt-5">
                                         <div class="flex gap-3 items-center">
-                                            <a href="{{route('students.profile.edit',$student->id)}}" class="btn btn-primary" type="button">Edit Information</a>
+                                            <a href="{{route('students.profile.edit',$student->id)}}" class="btn btn-primary {{$student->isVerified() ? 'disabled' : ''}}" type="button">Edit Information</a>
                                         </div>
                                     </div>
                                 </div>
@@ -125,8 +125,8 @@
                                     You can only print your student ID card once your account has been verified.
                                 </p>
                                 <div class="mt-4">
-                                    <button {{$student->status === 'Unverified' ? 'disabled':''}} data-bs-toggle="modal" data-bs-target="#id-modal" class="btn btn-secondary"
-                                        type="button">Print ID Card</button>
+                                    <a target="_blank" href="{{route('students.studentId.print',$student->id)}}" class="btn btn-secondary"
+                                        type="button">Print ID Card</a>
                                 </div>
                             </div>
                         </div>

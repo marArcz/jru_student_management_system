@@ -7,6 +7,10 @@ use Illuminate\Http\Request;
 
 class ProgramController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware(['role:admin']);
+    }
     /**
      * Display a listing of the resource.
      */
@@ -50,7 +54,7 @@ class ProgramController extends Controller
      */
     public function edit(Program $program)
     {
-        return view('programs.edit',['program' => $program]);
+        return view('programs.edit', ['program' => $program]);
     }
 
     /**

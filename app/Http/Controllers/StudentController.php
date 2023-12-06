@@ -12,6 +12,7 @@ class StudentController extends Controller
 {
     public function __construct()
     {
+        $this->middleware(['role:admin'],['except' => ['index','show']]);
     }
     /**
      * Display a listing of the resource.
@@ -112,8 +113,12 @@ class StudentController extends Controller
         return redirect(route('studentId.show',$student->id))->with('success','Successfully verified student!');
     }
 
-    public function printId(Student $student){
-        return view('students.print_id',compact('student'));
+    // public function printId(Student $student){
+    //     return view('students.print_id',compact('student'));
+    // }
+
+    public function print(Student $student){
+        return view('printables.student_details',compact('student'));
     }
 
 }

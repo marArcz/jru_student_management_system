@@ -18,8 +18,8 @@
     <div class="container mt-5">
         <div class="col-lg-6 col-md-7 col-4 mx-auto">
             <div class="text-center">
-                <h4 class="text-secondary text-center">Welcome to JRU</h4>
-                <p class="text-secondary">The official website of Jack Roberto University</p>
+                <h4 class="text-light text-center">Welcome to JRU</h4>
+                <p class="text-light">The official website of Jack Roberto University</p>
             </div>
             <div class="mt-5">
                 <div class="d-flex justify-content-center gap-3">

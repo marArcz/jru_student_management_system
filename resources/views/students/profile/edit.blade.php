@@ -17,7 +17,7 @@
                                 <div class="p-6 text-gray-900">
                                     <h6 class="fw-bold">Update Information</h6>
                                     <x-auth-session-status class="mb-4" :status="session('status')" />
-                                    <form action="{{route('students.profile.update',$student->id)}}" method="post">
+                                    <form action="{{ route('students.profile.update', $student->id) }}" method="post">
                                         @csrf
                                         @method('PATCH')
                                         <div class="mt-4">
@@ -29,7 +29,7 @@
                                                     <input type="text" name="student_id_no" class="form-control"
                                                         value="{{ old('student_id_no') ?? $student->student_id_no }}"
                                                         required>
-                                                        <x-input-error :messages="$errors->get('student_id_no')" class="ps-1" />
+                                                    <x-input-error :messages="$errors->get('student_id_no')" class="ps-1" />
                                                 </div>
                                             </div>
                                             <div class="row mb-3">
@@ -73,6 +73,35 @@
                                                                 value="{{ $program->id }}">{{ $program->name }}</option>
                                                         @endforeach
                                                     </select>
+                                                </div>
+                                            </div>
+                                            <div class="row mb-3">
+                                                <div class="col-sm-3">
+                                                    <p class="my-1 text-secondary">Email:</p>
+                                                </div>
+                                                <div class="col-sm">
+                                                    <input type="email" name="email" class="form-control"
+                                                        value="{{ old('email') ?? $student->email }}" required>
+                                                        <x-input-error :messages="$errors->get('email')" class="mt-2 ps-2" />
+                                                </div>
+                                            </div>
+                                            <div class="row mb-3">
+                                                <div class="col-sm-3">
+                                                    <p class="my-1 text-secondary">Address:</p>
+                                                </div>
+                                                <div class="col-sm">
+                                                    <input type="text" name="address" class="form-control"
+                                                        value="{{ old('address') ?? $student->address }}" required>
+                                                </div>
+                                            </div>
+                                            <div class="row mb-3">
+                                                <div class="col-sm-3">
+                                                    <p class="my-1 text-secondary">Phone:</p>
+                                                </div>
+                                                <div class="col-sm">
+                                                    <input type="text" name="phone" class="form-control"
+                                                        value="{{ old('phone') ?? $student->phone }}" required>
+                                                    <x-input-error :messages="$errors->get('phone')" class="mt-2 ps-2" />
                                                 </div>
                                             </div>
                                         </div>

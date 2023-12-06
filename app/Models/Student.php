@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Support\Facades\Hash;
 use PhpParser\Node\Expr\Cast\Bool_;
 
 class Student extends Authenticatable
@@ -54,4 +55,12 @@ class Student extends Authenticatable
     protected $casts = [
         'verified_at' => 'datetime'
     ];
+
+    /*
+    * Hash password automatically when creating / updating
+    */
+    public function setPasswordAttribute($password)
+    {
+        $this->attributes['password'] = Hash::make($password);
+    }
 }

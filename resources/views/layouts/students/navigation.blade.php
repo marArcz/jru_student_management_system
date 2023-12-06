@@ -7,7 +7,8 @@
 
                 <div class="shrink-0 flex items-center">
                     <a href="{{ route('dashboard') }}">
-                        <img src="{{asset('images/jru-logo.png')}}" class="block h-9 w-auto fill-current text-gray-800" />
+                        <img src="{{ asset('images/jru-logo.png') }}"
+                            class="block h-9 w-auto fill-current text-gray-800" />
                     </a>
                 </div>
 
@@ -44,14 +45,14 @@
                     </x-slot>
 
                     <x-slot name="content">
-                        <x-dropdown-link :href="route('profile.edit')">
+                        <x-dropdown-link :href="route('students.password.edit', $student->id)">
                             {{ __('Profile') }}
                         </x-dropdown-link>
 
                         <!-- Authentication -->
-                        <form method="POST" action="{{ route('logout') }}">
+                        <form method="POST" action="{{ route('students.auth.logout') }}">
                             @csrf
-                            <x-dropdown-link :href="route('logout')"
+                            <x-dropdown-link :href="route('students.auth.logout')"
                                 onclick="event.preventDefault();
                                                 this.closest('form').submit();">
                                 {{ __('Log Out') }}

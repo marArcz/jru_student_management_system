@@ -4,14 +4,17 @@ namespace App\Http\Controllers;
 
 use App\Models\Student;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Validation\ValidationException;
 
-class StudentIdController extends Controller
+class StudentPasswordController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
+        //
     }
 
     /**
@@ -19,7 +22,7 @@ class StudentIdController extends Controller
      */
     public function create()
     {
-
+        //
     }
 
     /**
@@ -35,11 +38,7 @@ class StudentIdController extends Controller
      */
     public function show(Student $student)
     {
-        return view('students.print_id',compact('student'));
-    }
-
-    public function print(Student $student){
-        return view('printables.student_id',compact('student'));
+        //
     }
 
     /**
@@ -47,7 +46,7 @@ class StudentIdController extends Controller
      */
     public function edit(Student $student)
     {
-
+        return view('students.profile.change_password',compact('student'));
     }
 
     /**
@@ -55,7 +54,20 @@ class StudentIdController extends Controller
      */
     public function update(Request $request, Student $student)
     {
-        //
+        $validated = $request->validate([
+            'current_password' => 'required',
+            'password' => 'required|confirmed|min:8'
+        ]);
+
+        if(!Hash::check($validated['current_password'],$student->password)){
+            throw ValidationException::withMessages([
+                'current_password' => 'Your password is incorrect!',
+            ]);
+        }
+
+        $student->password = $validated['password'];
+
+        return redirect()->back()->with('success','Successfully changed password');
     }
 
     /**

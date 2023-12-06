@@ -46,7 +46,7 @@ class StudentProfileController extends Controller
     public function edit(Student $student)
     {
         $programs = Program::all();
-        return view('students.profile.edit',compact('student','programs'));
+        return view('students.profile.edit', compact('student', 'programs'));
     }
 
     /**
@@ -54,26 +54,28 @@ class StudentProfileController extends Controller
      */
     public function update(Request $request, Student $student)
     {
-        if($request->hasFile('image')){
+        if ($request->hasFile('image')) {
             $image = $request->file('image');
-            $image->move(public_path('images'),$image->getClientOriginalName());
+            $image->move(public_path('images'), $image->getClientOriginalName());
 
             $student->image = 'images/' . $image->getClientOriginalName();
             $student->save();
-            // $student->update(['image' => 'images/' . $image->getClientOriginalName()]);
 
-            return redirect(route('students.home.index'))->with('success','Successfully changed photo!');
-        }else{
+            return redirect(route('students.home.index'))->with('success', 'Successfully changed photo!');
+        } else {
             $validated = $request->validate([
                 'firstname' => 'required',
                 'lastname' => 'required',
-                'middlename'=> 'string|nullable',
+                'middlename' => 'string|nullable',
                 'program_id' => 'required',
                 'student_id_no' => ['required', 'unique:students,student_id_no,' . $student->id, "regex:/^(\d{4}-)\d{5}$/D"],
+                'email' => ['required', 'unique:students,email,' . $student->id, 'email'],
+                'address' => ['required'],
+                'phone' => ['required', 'regex:/^([0]{1}[9]{1})(\d{9})$/D'],
             ]);
 
             $student->update($validated);
-            return redirect(route('students.home.index'))->with('success','Successfully updated information!');
+            return redirect(route('students.home.index'))->with('success', 'Successfully updated information!');
         }
     }
 

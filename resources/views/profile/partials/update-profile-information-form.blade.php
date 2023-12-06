@@ -18,14 +18,24 @@
         @method('patch')
 
         <div>
-            <x-input-label class="text-white" for="name"  :value="__('Name')" />
-            <x-text-input id="name" name="name" type="text" class="mt-1 block w-full" :value="old('name', $user->name)" required autofocus autocomplete="name" />
-            <x-input-error class="mt-2" :messages="$errors->get('name')" />
+            <x-input-label class="text-white" for="firstname"  :value="__('Firstname')" />
+            <x-text-input id="firstname" name="firstname" type="text" class="mt-1 text-dark block w-full" :value="old('firstname', $user->firstname)" required autofocus autocomplete="name" />
+            <x-input-error class="mt-2" :messages="$errors->get('firstname')" />
+        </div>
+        <div>
+            <x-input-label class="text-white" for="firstname"  :value="__('Middlename')" />
+            <x-text-input id="middlename" name="middlename" type="text" class="mt-1 text-dark block w-full" :value="old('middlename', $user->middlename)"  autofocus autocomplete="name" />
+            <x-input-error class="mt-2" :messages="$errors->get('middlename')" />
+        </div>
+        <div>
+            <x-input-label class="text-white" for="lastname"  :value="__('Lastname')" />
+            <x-text-input id="lastname" name="lastname" type="text" class="mt-1 text-dark block w-full" :value="old('lastname', $user->lastname)" required autofocus autocomplete="name" />
+            <x-input-error class="mt-2" :messages="$errors->get('lastname')" />
         </div>
 
         <div>
             <x-input-label class="text-white" for="email" :value="__('Email')" />
-            <x-text-input id="email" name="email" type="email" class="mt-1 block w-full" :value="old('email', $user->email)" required autocomplete="username" />
+            <x-text-input id="email" name="email" type="email" class="mt-1 text-dark block w-full" :value="old('email', $user->email)" required autocomplete="username" />
             <x-input-error class="mt-2" :messages="$errors->get('email')" />
 
             @if ($user instanceof \Illuminate\Contracts\Auth\MustVerifyEmail && ! $user->hasVerifiedEmail())
