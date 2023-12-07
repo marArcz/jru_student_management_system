@@ -59,16 +59,16 @@
                             <div class="nav-portals mt-5 ms-0 p-0">
                                 <ul class="nav p-0 gap-2 ">
                                     <li class="nav-item mx-0 px-0">
-                                        <a href="{{route('admin.login')}}" class="nav-link link-light text-center text-decoration-none p-0">
-                                            <div class=" bg-purple-400 p-4">
-                                                <i class="bx bxs-user fs-5"></i>
-                                                <p class="my-0 fw-medium">Admin Portal</p>
+                                        <a href="{{route('admin.login')}}" class="nav-link  text-center text-decoration-none p-0">
+                                            <div class=" bg-white  p-4">
+                                                <i class="bx bxs-user fs-5 text-blue-500"></i>
+                                                <p class="my-0 fw-medium text-blue-500">Admin Portal</p>
                                             </div>
                                         </a>
                                     </li>
                                     <li class="nav-item">
                                         <a href="{{route('students.auth.index')}}" class="nav-link link-light text-center text-decoration-none p-0">
-                                            <div class=" bg-slate-500 p-4">
+                                            <div class=" bg-slate-600 p-4">
                                                 <i class="bx bxs-user fs-5"></i>
                                                 <p class="my-0 fw-medium">Student Portal</p>
                                             </div>
