@@ -149,9 +149,15 @@
                     <div class="col-md-3">
                         <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg p-3">
                             <p class="text-secondary fw-bold">Student ID Card</p>
-                            <p class="text-sm text-secondary">
-                                You can only print your student ID card once your account has been verified.
-                            </p>
+                            @if ($student->isVerified())
+                                <p class="text-sm text-secondary">
+                                    You can print your student ID card by clicking the button below.
+                                </p>
+                            @else
+                                <p class="text-sm text-secondary">
+                                    You can print your student ID card once your account has been verified.
+                                </p>
+                            @endif
                             <div class="mt-4">
                                 <a target="_blank" href="{{ route('students.studentId.print', $student->id) }}"
                                     class="btn btn-secondary {{ !$student->isVerified() ? 'disabled' : '' }}"

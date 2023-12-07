@@ -96,14 +96,14 @@
                         </div>
                         <div class="mb-3">
                             <label for="" class="form-label text-secondary fw-semibold">Program</label>
-                            <select name="program_id" id="" class="form-select">
+                            <select required name="program_id" id="" class="form-select">
                                 <option value="">Select One</option>
                                 @foreach ($programs as $key => $program)
                                     <option {{ old('program_id') == $program->id ? 'selected' : '' }}
                                         value="{{ $program->id }}">{{ $program->name }}</option>
                                 @endforeach
                             </select>
-                            <x-input-error :messages="$errors->get('program')" class="mt-2 ps-0" />
+                            <x-input-error :messages="$errors->get('program_id')" class="mt-2 ps-0" />
                         </div>
                         <div class="mb-3">
                             <label for="" class="form-label text-secondary fw-semibold">Password</label>
