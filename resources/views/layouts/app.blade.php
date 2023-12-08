@@ -31,7 +31,7 @@
         @endif
         @if (session('success'))
             <div class="alert bg-white bg-opacity-25 shadow-sm rounded-0 mb-0">
-                <div class="max-w-7xl text-success mx-auto px-4 sm:px-6 lg:px-8 ">
+                <div class="max-w-7xl text-white mx-auto px-4 sm:px-6 lg:px-8 ">
                     <i class="bx bxs-check-circle"></i>
                     <span>{{ session('success') }}</span>
                 </div>
