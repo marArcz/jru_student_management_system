@@ -66,3 +66,12 @@ Before you begin, make sure you have the following installed on your system:
 
 ##### After successfully running the commands above. You can now access the application in the url:
 #### http://127.0.0.1:8000
+
+
+## <p style="color:#12a1e9">Default Admin Account (Admin portal)</p>
+#### You can access the admin portal using the default admin account
+
+#### email: <u>admin@gmail.com</u>
+#### password: <u>admin</u>
+
+
