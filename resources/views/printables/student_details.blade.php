@@ -80,7 +80,7 @@
             </div>
             <div class="mb-4">
                 <p class="fw-bold mb-1">Contact Information</p>
-                <div class="row">
+                <div class="row align-items-end">
                     <div class="col">
                         <p class="my-0">
                             {{ $student->email }}
