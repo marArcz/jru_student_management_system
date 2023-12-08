@@ -24,7 +24,7 @@
                         <img src="{{ asset('images/jru-logo.png') }}" alt="" class="img-fluid w-[60px] mx-auto">
                     </div>
                     <p class="my-0 fs-6 fw-bold text-secondary">
-                        {{ env('SCHOOL_NAME') }}
+                        Jack Roberto University
                     </p>
                 </div>
             </div>
