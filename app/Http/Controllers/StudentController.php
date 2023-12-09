@@ -39,6 +39,7 @@ class StudentController extends Controller
     {
         $validated = $request->validate([
             'firstname' => 'required',
+            'middlename' => 'nullable',
             'lastname' => 'required',
             'program_id' => ['required'],
             'student_id_no' => ['required', 'unique:students,student_id_no','regex:/^(\d{4}-)\d{5}$/D'],
